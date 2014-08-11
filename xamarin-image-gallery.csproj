@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{AB96ADCE-A095-4275-89E5-1B5316D3D2F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ImageGallery</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AssemblyName>xamarin-image-gallery</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Picasso">
+      <HintPath>Libs\Picasso.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Views\DetailedImageView.cs" />
+    <Compile Include="Views\ImageWithLocationView.cs" />
+    <Compile Include="Views\FileUriLoadImageView.cs" />
+    <Compile Include="Views\SquaredImageView.cs" />
+    <Compile Include="Structures\ImageInfo.cs" />
+    <Compile Include="Adapters\OverviewImagesAdapter.cs" />
+    <Compile Include="Models\AModel.cs" />
+    <Compile Include="Models\OverviewImageGalleryModel.cs" />
+    <Compile Include="Utils\ExtStorageUtils.cs" />
+    <Compile Include="Utils\IOUtils.cs" />
+    <Compile Include="Utils\LocationManagerUtils.cs" />
+    <Compile Include="Structures\FetchedImagesInfo.cs" />
+    <Compile Include="Database\DbContract.cs" />
+    <Compile Include="Database\DbHelper.cs" />
+    <Compile Include="Database\DbDao.cs" />
+    <Compile Include="Fragments\OverviewImageGalleryFragment.cs" />
+    <Compile Include="Fragments\AFragment.cs" />
+    <Compile Include="Enums\OverviewImageGalleryModelEvents.cs" />
+    <Compile Include="Views\OverviewImageGalleryView.cs" />
+    <Compile Include="Models\DetailedImageModel.cs" />
+    <Compile Include="Enums\DetailedImageModelEvents.cs" />
+    <Compile Include="Structures\FetchedDetailedImageInfo.cs" />
+    <Compile Include="Fragments\DetailedImageFragment.cs" />
+    <Compile Include="Enums\OverviewImageGalleryFragmentEvents.cs" />
+    <Compile Include="Adapters\CommentsAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Libs\Picasso.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\menu\Main.xml" />
+    <AndroidResource Include="Resources\values\Dimens.xml" />
+    <AndroidResource Include="Resources\values-land\Dimens.xml" />
+    <AndroidResource Include="Resources\layout\OverviewImageGallery.axml" />
+    <AndroidResource Include="Resources\layout\FileUriLoadImageView.axml" />
+    <AndroidResource Include="Resources\layout\DetailedImageView.axml" />
+    <AndroidResource Include="Resources\layout\ImageWithLocations.axml" />
+    <AndroidResource Include="Resources\layout\ActivityMain.axml" />
+    <AndroidResource Include="Resources\layout-land\DetailedImageView.axml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="Flat" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Activities\" />
+    <Folder Include="Views\" />
+    <Folder Include="Libs\" />
+    <Folder Include="Resources\layout-land\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\values-land\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Structures\" />
+    <Folder Include="Adapters\" />
+    <Folder Include="Models\" />
+    <Folder Include="Fragments\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Database\" />
+  </ItemGroup>
+</Project>

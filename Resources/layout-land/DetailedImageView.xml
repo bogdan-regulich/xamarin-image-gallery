@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DetailedImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/ImageWithLocations"
+            android:id="@+id/layout_img_with_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true" />
+        <ListView
+            android:id="@+id/list_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/layout_img_with_loc"
+            android:layout_above="@+id/etext_comment"
+            android:transcriptMode="alwaysScroll" />
+        <EditText
+            android:id="@+id/etext_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@id/list_comments"
+            android:layout_alignRight="@id/list_comments"
+            android:hint="Enter comment here"
+            android:singleLine="true" />
+    </RelativeLayout>
+</DetailedImageView>
